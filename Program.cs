@@ -7,8 +7,20 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddCors(o => o.AddPolicy("frontend", p =>
-    p.WithOrigins("https://query-pilot-five.vercel.app/").AllowAnyHeader().AllowAnyMethod().AllowCredentials()));
+
+ builder.Services.AddCors(options =>
+        {
+            options.AddPolicy("frontend", policy =>
+            {
+
+                policy.WithOrigins("https://query-pilot-five.vercel.app")
+                      .AllowAnyHeader()
+                      .AllowAnyMethod()
+                      .AllowCredentials();
+
+            });
+        });
+
 
 // Mongo client is thread-safe -> singleton is the recommended lifetime.
 builder.Services.AddSingleton<IMongoClient>(_ =>
