@@ -21,7 +21,6 @@ builder.Services.AddSwaggerGen();
             });
         });
 
-
 // Mongo client is thread-safe -> singleton is the recommended lifetime.
 builder.Services.AddSingleton<IMongoClient>(_ =>
     new MongoClient(builder.Configuration["Mongo:ConnectionString"] ?? "mongodb://localhost:27017"));
