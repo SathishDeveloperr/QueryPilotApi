@@ -13,7 +13,7 @@ builder.Services.AddSwaggerGen();
             options.AddPolicy("frontend", policy =>
             {
 
-                policy.WithOrigins("https://query-pilot-five.vercel.app")
+                policy.WithOrigins("https://query-pilot-five.vercel.app","http://localhost:5173'")
                       .AllowAnyHeader()
                       .AllowAnyMethod()
                       .AllowCredentials();
