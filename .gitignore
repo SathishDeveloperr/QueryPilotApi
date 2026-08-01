@@ -1,0 +1,13 @@
+# Build output
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Local secrets - NEVER commit these
+appsettings.Development.json
+appsettings.Local.json
+.env
